@@ -10,7 +10,7 @@ pipeline{
 	   stage('FRONTEND-DOCKER-BUILD'){
 		steps{
 		  sh'''
-		  cd frontend
+		  cd application/frontend
 		  docker build -t aakankshas3107/easy-frontend:latest .
 		  '''
 		}
@@ -19,7 +19,7 @@ pipeline{
 	  stage('BACKEND-DOCKER-BUILD'){
 		steps{
 		  sh'''
-		  cd backend
+		  cd application/backend
 		  docker build -t aakankshas3107/easy-backend:latest .
 		  '''
 		}
