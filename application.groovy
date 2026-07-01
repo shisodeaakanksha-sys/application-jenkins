@@ -6,11 +6,26 @@ pipeline{
 		   git 'https://github.com/shisodeaakanksha-sys/application-jenkins.git'
 		}
 	    }
+
+	stage('CHECK WORKSPACE') {
+    		steps {
+        	sh '''
+        	echo "Current Directory:"
+        	pwd
+
+        	echo "Root Contents:"
+        	ls -la
+
+        	echo "Repository Structure:"
+        	find . -maxdepth 3
+        	'''
+    		}
+	}		
 	
 	   stage('FRONTEND-DOCKER-BUILD'){
 		steps{
 		  sh'''
-		  cd application/frontend
+		  cd frontend
 		  docker build -t aakankshas3107/easy-frontend:latest .
 		  '''
 		}
@@ -19,7 +34,7 @@ pipeline{
 	  stage('BACKEND-DOCKER-BUILD'){
 		steps{
 		  sh'''
-		  cd application/backend
+		  cd backend
 		  docker build -t aakankshas3107/easy-backend:latest .
 		  '''
 		}
