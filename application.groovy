@@ -36,8 +36,8 @@ pipeline{
 		   ]){
 		     sh'''
 		     echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin
-		     docker push aakanksha3107/easy-frontend:latest
-		     docker push aakanksha3107/easy-backend:latest
+		     docker push aakankshas3107/easy-frontend:latest
+		     docker push aakankshas3107/easy-backend:latest
 		     docker logout
 		     '''
 		     }
