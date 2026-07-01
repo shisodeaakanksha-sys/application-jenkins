@@ -8,20 +8,15 @@ pipeline{
 	    }
 
 	stage('CHECK WORKSPACE') {
-    		steps {
+ 	     steps {
         	sh '''
-        	echo "Current Directory:"
         	pwd
-
-        	echo "Root Contents:"
         	ls -la
-
-        	echo "Repository Structure:"
-        	find . -maxdepth 3
+        	echo "===== app-b29-final ====="
+        	find app-b29-final -maxdepth 3
         	'''
-    		}
-	}		
-	
+    	     }
+	}	
 	   stage('FRONTEND-DOCKER-BUILD'){
 		steps{
 		  sh'''
