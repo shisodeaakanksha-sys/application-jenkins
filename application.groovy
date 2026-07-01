@@ -62,8 +62,8 @@ pipeline{
 	stage('DOCKER-CLEAN') {
             steps {
                 sh '''
-                docker rmi -f aakanksha3107/easy-frontend:latest || true
-                docker rmi -f aakanksha3107/easy-backend:latest || true
+                docker rmi -f aakankshas3107/easy-frontend:latest || true
+                docker rmi -f aakankshas3107/easy-backend:latest || true
                 '''
             }
         }
